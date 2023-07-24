@@ -15,3 +15,9 @@
   top: 0;
   z-index: 1;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Define a estrutura das linhas: menu, conteúdo e rodapé */
+  height: 100vh; /* Define a altura da grid para preencher toda a tela */
+}
