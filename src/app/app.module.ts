@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { ComponentsModule } from './components/components.module';
 import { PagesModule } from './pages/pages.module';
 
 @NgModule({
@@ -16,6 +17,7 @@ import { PagesModule } from './pages/pages.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     PagesModule,
+    ComponentsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
