@@ -7,6 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { RouterModule } from '@angular/router';
+import { FooterComponent } from '../footer/footer.component';
 import { NavigationComponent } from './navigation.component';
 
 describe('NavigationComponent', () => {
@@ -15,7 +16,10 @@ describe('NavigationComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [NavigationComponent],
+      declarations: [
+        NavigationComponent,
+        FooterComponent,
+      ],
       imports: [
         NoopAnimationsModule,
         MatButtonModule,
