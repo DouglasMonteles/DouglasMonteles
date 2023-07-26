@@ -18,4 +18,15 @@ describe('FooterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should verify if the correct description was settled in the component controller', () => {
+    expect(component.text).toEqual('Copyright ©. Todos os direitos reservados.');
+  });
+
+  it('should verify if the correct description is showed in the screen', () => {
+    const compiled = fixture.nativeElement;
+    const showedText = compiled.querySelector('footer').textContent.trim();
+
+    expect(showedText).toEqual('Copyright ©. Todos os direitos reservados.');
+  });
 });
