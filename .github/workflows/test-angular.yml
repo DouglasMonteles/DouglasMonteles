@@ -25,7 +25,7 @@ jobs:
         run: npm install
 
       - name: Run tests
-        run: ng test --browsers=ChromeHeadless
+        run: ng test --browsers=ChromeHeadless --watch=false
 
       - name: "Fixing BrowserStack"
         run: sed -i -z "s/ removeAllListeners()\n/ removeAllListeners();process.nextTick(() => process.exit(code || 0));\n/g" node_modules/karma/lib/server.js
