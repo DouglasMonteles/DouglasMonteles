@@ -1,10 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css']
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit {
+
+  constructor(
+    public userService: UserService
+  ) {}
+
+  ngOnInit(): void {
+    this.userService.getBasicInformation().subscribe(console.log)
+  }
 
 }
