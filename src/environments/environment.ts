@@ -1,3 +1,3 @@
 export const environment = {
-  BASE_URL: '/assets/data',
+  BASE_URL: '/DouglasMonteles/assets/data',
 };
