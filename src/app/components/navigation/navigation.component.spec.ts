@@ -7,7 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { RouterModule } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 import { Observable, of } from 'rxjs';
 import { FooterComponent } from '../footer/footer.component';
 import { NavigationComponent } from './navigation.component';
@@ -34,7 +34,7 @@ describe('NavigationComponent', () => {
         MatListModule,
         MatSidenavModule,
         MatToolbarModule,
-        RouterModule,
+        RouterTestingModule,
       ],
       providers: [
         {
