@@ -8,6 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    id: gh-deploy  # Add an id to the build-and-test job
 
     steps:
       - name: Checkout repository

@@ -8,6 +8,7 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    id: test  # Add an id to the build-and-test job
 
     steps:
       - name: Checkout repository
