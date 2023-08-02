@@ -26,3 +26,6 @@ jobs:
 
       - name: Run tests
         run: ng test --browsers=ChromeHeadless
+
+      - name: "Fixing BrowserStack"
+        run: sed -i -z "s/ removeAllListeners()\n/ removeAllListeners();process.nextTick(() => process.exit(code || 0));\n/g" node_modules/karma/lib/server.js
