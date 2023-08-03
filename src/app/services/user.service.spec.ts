@@ -1,6 +1,7 @@
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 
+import { UserInfo } from '../types/UserInfo';
 import { UserService } from './user.service';
 
 describe('UserService', () => {
@@ -35,7 +36,7 @@ describe('UserService', () => {
   });
 
   it('should show the user information json', () => {
-    const userInfoMock = {
+    const userInfoMock: UserInfo = {
       name: "Douglas",
       email: "email@domain.com",
       phone_number: "99999999999",
