@@ -6,6 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InputTextComponent } from './input-text/input-text.component';
 
 @NgModule({
@@ -19,6 +20,7 @@ import { InputTextComponent } from './input-text/input-text.component';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
+    BrowserAnimationsModule,
   ],
   exports: [
     InputTextComponent,

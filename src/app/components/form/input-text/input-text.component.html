@@ -1,5 +1,20 @@
-<mat-form-field appearance="outline">
-  <mat-label>Outline form field</mat-label>
-  <input matInput placeholder="Placeholder">
-  <mat-hint>Hint</mat-hint>
+<mat-form-field
+  class="w-full"
+  appearance="outline"
+>
+  <mat-label>
+    {{label}}
+  </mat-label>
+
+  <input
+    matInput
+    [value]="value"
+    [readonly]="readonly"
+  >
+
+  <mat-hint
+    class="text-gray-500"
+  >
+    {{hint}}
+  </mat-hint>
 </mat-form-field>

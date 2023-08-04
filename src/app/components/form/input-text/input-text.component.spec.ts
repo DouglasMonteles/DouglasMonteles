@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { FormModule } from '../form.module';
 import { InputTextComponent } from './input-text.component';
 
 describe('InputTextComponent', () => {
@@ -8,7 +9,8 @@ describe('InputTextComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [InputTextComponent]
+      declarations: [InputTextComponent],
+      imports: [FormModule]
     });
     fixture = TestBed.createComponent(InputTextComponent);
     component = fixture.componentInstance;
