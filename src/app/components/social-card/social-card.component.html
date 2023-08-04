@@ -1,23 +1,25 @@
 <mat-card class="">
   <div class="flex flex-col lg:flex-row">
     <div class="w-full">
-      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+      <img mat-card-image [src]="imageLink" [alt]="'Rede social: ' + name">
     </div>
 
     <div class="w-full flex flex-col justify-between">
       <mat-card-header>
-        <mat-card-title>Github</mat-card-title>
+        <mat-card-title>{{name}}</mat-card-title>
         <mat-card-subtitle>Rede social</mat-card-subtitle>
       </mat-card-header>
 
       <mat-card-actions>
-        <button
-          class="text-xs"
+        <a
+          class="text-xs w-full sm:w-auto"
           mat-raised-button
           color="primary"
+          [href]="link"
+          target="_blank"
         >
-          Ir para Github
-        </button>
+          Ir para {{name}}
+        </a>
       </mat-card-actions>
     </div>
   </div>

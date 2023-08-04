@@ -2,7 +2,7 @@
   *ngIf="(userInfo$ | async) as userInfo"
   class="w-full flex justify-center"
 >
-  <div class="mt-8 flex gap-8 flex-col w-4/6">
+  <div class="mt-8 flex gap-8 flex-col w-full sm:w-4/6">
     <app-input-text
       label="Nome Completo"
       [value]="userInfo.name"
@@ -25,12 +25,19 @@
       />
     </div>
 
-    <div class="flex gap-4">
-      <app-social-card />
-      <app-social-card />
+    <div class="w-full flex flex-col sm:flex-row gap-4">
+      <app-social-card
+        class="w-full sm:w-1/2"
+        name="Github"
+        imageLink="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"
+        [link]="userInfo.github"
+      />
+      <app-social-card
+        class="w-full sm:w-1/2"
+        name="Linkedin"
+        imageLink="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+        [link]="userInfo.linkedin"
+      />
     </div>
-
-    <p>Github: <a [href]="userInfo.github" target="_blank">link</a></p>
-    <p>Linkedin: <a [href]="userInfo.linkedin" target="_blank">link</a></p>
   </div>
 </div>
