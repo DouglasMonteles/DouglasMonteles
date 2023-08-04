@@ -2,7 +2,7 @@
   *ngIf="(userInfo$ | async) as userInfo"
   class="w-full flex justify-center"
 >
-  <div class="mt-8 flex gap-8 sm:flex-col w-4/6">
+  <div class="mt-8 flex gap-8 flex-col w-4/6">
     <app-input-text
       label="Nome Completo"
       [value]="userInfo.name"
@@ -23,6 +23,11 @@
         [value]="userInfo.email"
         hint="Endereço de e-mail para contato"
       />
+    </div>
+
+    <div class="flex gap-4">
+      <app-social-card />
+      <app-social-card />
     </div>
 
     <p>Github: <a [href]="userInfo.github" target="_blank">link</a></p>
