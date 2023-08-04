@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
+import { UserInfo } from 'src/app/types/UserInfo';
 
 @Component({
   selector: 'app-user-info',
@@ -9,7 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UserInfoComponent implements OnInit {
 
-  userInfo$: Observable<any>;
+  userInfo$: Observable<UserInfo>;
 
   constructor(
     private _userService: UserService

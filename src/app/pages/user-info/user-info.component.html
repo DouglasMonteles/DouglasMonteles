@@ -1,1 +1,12 @@
-<p>user-info works!{{userInfo$ | async | json}}</p>
+<div
+  *ngIf="(userInfo$ | async) as userInfo"
+  class=""
+>
+  <app-input-text />
+
+  <p>Nome: {{userInfo.name}}</p>
+  <p>Telefone: {{userInfo.phone_number}}</p>
+  <p>E-mail: {{userInfo.email}}</p>
+  <p>Github: <a [href]="userInfo.github" target="_blank">link</a></p>
+  <p>Linkedin: <a [href]="userInfo.linkedin" target="_blank">link</a></p>
+</div>
