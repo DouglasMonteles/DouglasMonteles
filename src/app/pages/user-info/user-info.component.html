@@ -1,1 +1,40 @@
-<p>user-info works!{{userInfo$ | async | json}}</p>
+<div *ngIf="userInfo$ | async as userInfo" class="w-full flex justify-center">
+  <div class="mt-8 flex gap-8 flex-col w-full sm:w-4/6">
+    <app-input-text
+      label="Nome Completo"
+      [value]="userInfo.name"
+      hint="Nome do usuário"
+    />
+
+    <div class="flex flex-col gap-4 md:flex-row">
+      <app-input-text
+        class="w-full"
+        label="Telefone"
+        [value]="userInfo.phone_number"
+        hint="Telefone para contato"
+      />
+
+      <app-input-text
+        class="w-full"
+        label="E-mail"
+        [value]="userInfo.email"
+        hint="Endereço de e-mail para contato"
+      />
+    </div>
+
+    <div class="w-full flex flex-col justify-evenly sm:flex-row gap-4">
+      <app-social-card
+        class="w-full sm:w-2/3"
+        name="Github"
+        imageLink="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"
+        [link]="userInfo.github"
+      />
+      <app-social-card
+        class="w-full sm:w-2/3"
+        name="Linkedin"
+        imageLink="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+        [link]="userInfo.linkedin"
+      />
+    </div>
+  </div>
+</div>
