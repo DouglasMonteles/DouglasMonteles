@@ -53,7 +53,7 @@ describe('SocialCardComponent', () => {
     expect(matCardHeader?.textContent).toContain(socialCardInformationMock.name);
     expect(matCardHeader?.textContent).toContain('Rede social');
 
-    const matCardOptions: Element | null = element.querySelector('mat-card div mat-card-actions');
+    const matCardOptions: Element | null = element.querySelector('mat-card div');
     expect(matCardOptions?.textContent).toContain(`Ir para ${socialCardInformationMock.name}`);
   });
 
@@ -61,7 +61,7 @@ describe('SocialCardComponent', () => {
     component.link = socialCardInformationMock.link;
     fixture.detectChanges();
 
-    const matCardLink: DebugElement = fixture.debugElement.query(By.css('mat-card-actions a'));
+    const matCardLink: DebugElement = fixture.debugElement.query(By.css('div a'));
 
     // Prevent that the click make a real redirection
     // matCardLink.nativeElement.dispatchEvent(new Event('click'));
