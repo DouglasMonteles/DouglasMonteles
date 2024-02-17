@@ -1,17 +1,27 @@
 <div *ngIf="userInfo$ | async as userInfo" class="w-full flex justify-center">
   <div class="mt-8 flex gap-8 flex-col w-full sm:w-4/6">
-    <app-input-text
-      label="Nome Completo"
-      [value]="userInfo.name"
-      hint="Nome do usuário"
-    />
+    <div class="flex flex-col gap-4 md:flex-row">
+      <app-input-text
+        class="w-full"
+        label="Nome Completo"
+        [value]="userInfo.name"
+        hint="Nome do usuário"
+      />
+
+      <app-input-text
+        class="w-full"
+        label="Universidade"
+        [value]="userInfo.company"
+        hint="Instituição superior"
+      />
+    </div>
 
     <div class="flex flex-col gap-4 md:flex-row">
       <app-input-text
         class="w-full"
-        label="Telefone"
-        [value]="userInfo.phone_number"
-        hint="Telefone para contato"
+        label="Twitter"
+        [value]="userInfo.twitter_username"
+        hint="Usuário do X (antigo Twitter)"
       />
 
       <app-input-text
@@ -22,13 +32,39 @@
       />
     </div>
 
+    <div class="flex flex-col gap-4 md:flex-row">
+      <app-input-text
+        class="w-full"
+        label="Localização"
+        [value]="userInfo.location"
+        hint="Cidade de residencia"
+      />
+    </div>
+
+    <div class="flex flex-col gap-4 md:flex-row">
+      <app-input-text-area
+        class="w-full"
+        label="Biografia"
+        [value]="userInfo.bio"
+        hint="Breve descrição"
+      />
+    </div>
+
     <div class="w-full flex flex-col justify-evenly sm:flex-row gap-4">
       <app-social-card
         class="w-full sm:w-2/3"
         name="Github"
         imageLink="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"
-        [link]="userInfo.github"
-      />
+        [link]="userInfo.html_url"
+      >
+        <ul class="text-slate-500">
+          <li>Seguidores: {{userInfo.followers}}</li>
+          <li>Seguindo: {{userInfo.following}}</li>
+          <li>Repo. públicos: {{userInfo.public_repos}}</li>
+          <li>Criado: {{userInfo.created_at | date:'dd/MM/yyyy HH:mm'}}</li>
+          <li>Atualizado: {{userInfo.updated_at | date:'dd/MM/yyyy HH:mm'}}</li>
+        </ul>
+      </app-social-card>
       <app-social-card
         class="w-full sm:w-2/3"
         name="Linkedin"
