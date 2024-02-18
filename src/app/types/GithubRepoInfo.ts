@@ -1,3 +1,5 @@
+import { Observable } from "rxjs";
+
 // https://api.github.com/users/{username}/repos
 export default interface GithubRepoInfo {
   id: number;
@@ -23,4 +25,18 @@ export default interface GithubRepoInfo {
   clone_url: string;
   visibility: string;
   default_branch: string;
+  size: number;
+  stargazers_count: number;
+  watchers_count: number;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_downloads: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_discussions: boolean;
+  forks_count: number;
+  archived: boolean;
+  disabled: boolean;
+  open_issues_count: number;
+  languages$: Observable<string[]>;
 };

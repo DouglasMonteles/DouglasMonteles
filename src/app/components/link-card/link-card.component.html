@@ -4,14 +4,14 @@
       <img
         mat-card-image
         [src]="imageLink"
-        [alt]="'Rede social: ' + name"
+        [alt]="title + ' ' + subtitle"
       >
     </div>
 
     <div class="w-full flex flex-col justify-between">
       <mat-card-header>
-        <mat-card-title>{{name}}</mat-card-title>
-        <mat-card-subtitle>Rede social</mat-card-subtitle>
+        <mat-card-title>{{title}}</mat-card-title>
+        <mat-card-subtitle>{{subtitle}}</mat-card-subtitle>
       </mat-card-header>
 
       <mat-card-content>
@@ -22,10 +22,11 @@
         class="text-xs w-full sm:w-auto m-2"
         mat-raised-button
         color="primary"
-        [href]="link"
         target="_blank"
+        [href]="link"
+        [title]="'Ir para ' + title"
       >
-        Ir para {{name}}
+        Ir para {{compressedTitle}}
       </a>
     </div>
   </div>

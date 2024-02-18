@@ -51,9 +51,10 @@
     </div>
 
     <div class="w-full flex flex-col justify-evenly sm:flex-row gap-4">
-      <app-social-card
+      <app-link-card
         class="w-full sm:w-2/3"
-        name="Github"
+        title="Github"
+        subtitle="Rede social"
         imageLink="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"
         [link]="userInfo.html_url"
       >
@@ -64,10 +65,12 @@
           <li>Criado: {{userInfo.created_at | date:'dd/MM/yyyy HH:mm'}}</li>
           <li>Atualizado: {{userInfo.updated_at | date:'dd/MM/yyyy HH:mm'}}</li>
         </ul>
-      </app-social-card>
-      <app-social-card
+      </app-link-card>
+
+      <app-link-card
         class="w-full sm:w-2/3"
-        name="Linkedin"
+        title="Linkedin"
+        subtitle="Rede social"
         imageLink="https://cdn-icons-png.flaticon.com/512/174/174857.png"
         [link]="userInfo.linkedin"
       />

@@ -4,7 +4,7 @@ import { DebugElement } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { By } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { SocialCardComponent } from './social-card.component';
+import { SocialCardComponent } from './link-card.component';
 
 describe('SocialCardComponent', () => {
   let component: SocialCardComponent;

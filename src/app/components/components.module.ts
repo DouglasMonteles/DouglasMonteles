@@ -9,14 +9,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 
 import { FooterComponent } from './footer/footer.component';
+import { LinkCardComponent } from './link-card/link-card.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { SocialCardComponent } from './social-card/social-card.component';
 
 @NgModule({
   declarations: [
     NavigationComponent,
     FooterComponent,
-    SocialCardComponent,
+    LinkCardComponent,
   ],
   imports: [
     CommonModule,
@@ -30,7 +30,7 @@ import { SocialCardComponent } from './social-card/social-card.component';
   ],
   exports: [
     NavigationComponent,
-    SocialCardComponent,
+    LinkCardComponent,
   ],
 })
 export class ComponentsModule { }

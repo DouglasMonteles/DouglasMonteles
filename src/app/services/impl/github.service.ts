@@ -24,7 +24,7 @@ export class GithubService implements IGithubService {
    */
   public getGithubRepoInfo(username: string): Observable<GithubRepoInfo[]> {
     return this._http.get<GithubRepoInfo[]>(
-      `${this.GITHUB_BASE_URL}/${username}/repo`
+      `${this.GITHUB_BASE_URL}/users/${username}/repos`
     );
   }
 
