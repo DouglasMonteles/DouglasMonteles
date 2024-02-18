@@ -4,27 +4,28 @@ import { DebugElement } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { By } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { SocialCardComponent } from './link-card.component';
+import { LinkCardComponent } from './link-card.component';
 
-describe('SocialCardComponent', () => {
-  let component: SocialCardComponent;
-  let fixture: ComponentFixture<SocialCardComponent>;
+describe('LinkCardComponent', () => {
+  let component: LinkCardComponent;
+  let fixture: ComponentFixture<LinkCardComponent>;
   let router: Router;
 
   const socialCardInformationMock = {
-    name: 'Nome da rede social',
+    title: 'Nome da rede social',
+    subtitle: 'Rede social',
     link: 'https://redesocial.com',
     imageLink: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png',
   };
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SocialCardComponent],
+      declarations: [LinkCardComponent],
       imports: [
         MatCardModule,
       ]
     });
-    fixture = TestBed.createComponent(SocialCardComponent);
+    fixture = TestBed.createComponent(LinkCardComponent);
     component = fixture.componentInstance;
     router = TestBed.inject(Router);
     fixture.detectChanges();
@@ -35,9 +36,11 @@ describe('SocialCardComponent', () => {
   });
 
   it('should show card information', () => {
-    component.name = socialCardInformationMock.name;
+    component.title = socialCardInformationMock.title;
+    component.subtitle = socialCardInformationMock.subtitle;
     component.link = socialCardInformationMock.link;
     component.imageLink = socialCardInformationMock.imageLink;
+    component.compressedTitle = socialCardInformationMock.title;
 
     // forces the component to reload with the new information
     fixture.detectChanges();
@@ -47,14 +50,14 @@ describe('SocialCardComponent', () => {
 
     const matCardImage: HTMLImageElement | null = element.querySelector('mat-card img');
     expect(matCardImage?.src).toContain(socialCardInformationMock.imageLink);
-    expect(matCardImage?.alt).toContain('Rede social: ' + socialCardInformationMock.name);
+    expect(matCardImage?.alt).toContain(socialCardInformationMock.title + ' ' + socialCardInformationMock.subtitle);
 
     const matCardHeader: Element | null = element.querySelector('mat-card mat-card-header');
-    expect(matCardHeader?.textContent).toContain(socialCardInformationMock.name);
+    expect(matCardHeader?.textContent).toContain(socialCardInformationMock.title);
     expect(matCardHeader?.textContent).toContain('Rede social');
 
-    const matCardOptions: Element | null = element.querySelector('mat-card div');
-    expect(matCardOptions?.textContent).toContain(`Ir para ${socialCardInformationMock.name}`);
+    const matCardOptions: Element | null = element.querySelector('mat-card div a');
+    expect(matCardOptions?.textContent?.trim()).toContain(`Ir para ${socialCardInformationMock.title}`);
   });
 
   it('should handle the action when the \'Ir para [...]\' button is clicked', () => {
