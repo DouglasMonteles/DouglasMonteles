@@ -1,0 +1,18 @@
+<div class="flex items-center justify-center">
+  <button
+    (click)="previousPageIndex()"
+    [disabled]="actualPageIndex === 1"
+    mat-mini-fab
+    color="primary"
+  >
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+
+  <button class="text-xl" mat-button disabled>
+    {{ actualPageIndex }}
+  </button>
+
+  <button (click)="nextPageIndex()" mat-mini-fab color="primary">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+</div>

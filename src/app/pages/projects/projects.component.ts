@@ -53,7 +53,8 @@ export class ProjectsComponent implements AfterContentInit {
         // loaded
         this.isLoading = false;
 
-        if (repos === null) {
+        if (repos === null || repos.length === 0) {
+          this.pagination.page.actual.next(1);
           return [];
         }
 
@@ -64,6 +65,11 @@ export class ProjectsComponent implements AfterContentInit {
     .subscribe({
       next: (data) => this.projects = data,
     });
+  }
+
+  handleChangePage(page: number): void {
+    console.log(page)
+    this.pagination.page.actual.next(page);
   }
 
   /**
