@@ -1,57 +1,69 @@
-<div
-  class="mx-auto max-w-7xl grid grid-cols-1 grid-flow-row gap-4 md:grid-cols-2 lg:grid-cols-2"
->
-  <app-link-card
-    *ngFor="let project of projects$ | async"
-    [title]="project.name"
-    [link]="project.html_url"
-    class="w-full h-full"
-    subtitle="Repositório"
-    imageLink="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"
+<div *ngIf="!isLoading; else loading" class="flex flex-col mx-auto max-w-7xl">
+
+  <p>Resultados: {{ pagination.totalItems }}</p>
+
+  <div
+    class="grid grid-cols-1 grid-flow-row gap-4 md:grid-cols-2 lg:grid-cols-2"
   >
-    <div class="mt-2 flex flex-col gap-6">
-      <p
-        *ngIf="project.description; else noDescription"
-        class="text-slate-500 text-justify"
-      >
-        <span class="font-semibold"> Descrição: </span>
-        {{ project.description }}
-      </p>
+    <app-link-card
+      *ngFor="let project of projects"
+      [title]="project.name"
+      [link]="project.html_url"
+      class="w-full h-full"
+      subtitle="Repositório"
+      imageLink="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"
+    >
+      <div class="mt-2 flex flex-col gap-6">
+        <p
+          *ngIf="project.description; else noDescription"
+          class="text-slate-500 text-justify"
+        >
+          <span class="font-semibold"> Descrição: </span>
+          {{ project.description }}
+        </p>
 
-      <mat-chip-set aria-label="Dog selection">
-        <mat-chip>
-          {{ project.visibility }}
-        </mat-chip>
+        <mat-chip-set aria-label="Informações dos repositórios">
+          <mat-chip>
+            {{ project.visibility }}
+          </mat-chip>
 
-        <mat-chip>
-          {{ project.default_branch }}
-        </mat-chip>
+          <mat-chip>
+            {{ project.default_branch }}
+          </mat-chip>
 
-        <mat-chip> {{ project.size }} KB </mat-chip>
+          <mat-chip> {{ project.size }} KB </mat-chip>
 
-        <mat-chip *ngFor="let language of project.languages$ | async">
-          {{ language }}
-        </mat-chip>
+          <mat-chip *ngFor="let language of project.languages$ | async">
+            {{ language }}
+          </mat-chip>
 
-        <mat-chip *ngIf="project.fork; else noForked"> forked </mat-chip>
+          <mat-chip *ngIf="project.fork; else noForked"> forked </mat-chip>
 
-        <mat-chip *ngIf="project.private"> private </mat-chip>
+          <mat-chip *ngIf="project.private"> private </mat-chip>
 
-        <ng-template #noForked>
-          <mat-chip> original </mat-chip>
-        </ng-template>
-      </mat-chip-set>
+          <ng-template #noForked>
+            <mat-chip> original </mat-chip>
+          </ng-template>
+        </mat-chip-set>
 
-      <ul class="text-slate-500">
-        <li>Criando em: {{project.created_at | date: 'dd/MM/yyyy HH:mm'}}</li>
-        <li>Atualizado em: {{project.updated_at | date: 'dd/MM/yyyy HH:mm'}}</li>
-      </ul>
-    </div>
+        <ul class="text-slate-500">
+          <li>
+            Criando em: {{ project.created_at | date : "dd/MM/yyyy HH:mm" }}
+          </li>
+          <li>
+            Atualizado em: {{ project.updated_at | date : "dd/MM/yyyy HH:mm" }}
+          </li>
+        </ul>
+      </div>
 
-    <ng-template #noDescription>
-      <p class="text-slate-500 mt-2">
-        Sem descrição
-      </p>
-    </ng-template>
-  </app-link-card>
+      <ng-template #noDescription>
+        <p class="text-slate-500 mt-2">Sem descrição</p>
+      </ng-template>
+    </app-link-card>
+  </div>
+
 </div>
+
+<ng-template #loading>
+  Carregando...
+</ng-template>

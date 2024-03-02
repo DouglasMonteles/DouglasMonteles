@@ -1,6 +1,6 @@
 import { Observable } from "rxjs";
 
-// https://api.github.com/users/{username}/repos
+// https://api.github.com/users/{username}/repos?page={page}&per_page={per_page}
 export default interface GithubRepoInfo {
   id: number;
   name: string;

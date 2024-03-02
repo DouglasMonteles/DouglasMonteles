@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
+import GithubPagination from 'src/app/types/GithubPagination';
 import GithubRepoInfo from 'src/app/types/GithubRepoInfo';
 import GithubRepoLanguage from 'src/app/types/GithubRepoLanguage';
 import GithubUserInfo from 'src/app/types/GithubUserInfo';
@@ -17,14 +18,20 @@ export class GithubService implements IGithubService {
   constructor() {}
 
   /**
-   * Fetches the list of repositories for a given GitHub username.
+   * Fetches a list of repository information for a given GitHub username.
    *
    * @param username - The username of the GitHub account.
-   * @returns An array of repository information objects.
+   * @param pagination - The pagination parameters.
+   * @returns An array of repository information.
    */
-  public getGithubRepoInfo(username: string): Observable<GithubRepoInfo[]> {
+  public getGithubRepoInfo(
+    username: string,
+    pagination: GithubPagination
+  ): Observable<GithubRepoInfo[]> {
+    const { page } = pagination;
+
     return this._http.get<GithubRepoInfo[]>(
-      `${this.GITHUB_BASE_URL}/users/${username}/repos`
+      `${this.GITHUB_BASE_URL}/users/${username}/repos?page=${page.actual.getValue()}&per_page=${page.perPage}`
     );
   }
 
