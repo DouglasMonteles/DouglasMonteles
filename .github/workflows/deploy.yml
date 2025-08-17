@@ -18,13 +18,16 @@ jobs:
         with:
           node-version: 22.12.0
 
+      - name: Instalar Angular CLI
+        run: npm install -g @angular/cli
+
       - name: Instalar dependências
         working-directory: portfolio
         run: npm install
 
       - name: Build Angular
         working-directory: portfolio
-        run: npm run build --if-present
+        run: ng build
 
       - name: Instalar CLI do Vercel
         run: npm install -g vercel
