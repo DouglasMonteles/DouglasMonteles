@@ -39,4 +39,4 @@ outras linguagens, explorando seus pontos fortes e reconhecendo suas limitaçõe
 
 ---
 
-> _"Do outro lado do mar, está a liberdade."_ — AOT
+> _"For those who come after."_ — Gustave, Expedition 33.
