@@ -1,0 +1,20 @@
+<article class="flex flex-col gap-8">
+  <div class="flex flex-row items-center gap-2 h-full">
+    <img 
+      [src]="pictureLink()" 
+      alt="Foto de perfil" 
+      class="w-12 h-12 rounded-full lg:w-28 lg:h-28">
+    <div>
+      <h1 class="text-xl lg:text-2xl">
+        {{name()}}
+      </h1>
+      <h2 class="font-light lg:text-lg">
+        {{profession()}}
+      </h2>
+    </div>
+  </div>
+
+  <p class="text-justify font-normal lg:text-lg">
+    {{resume()}}
+  </p>
+</article>
