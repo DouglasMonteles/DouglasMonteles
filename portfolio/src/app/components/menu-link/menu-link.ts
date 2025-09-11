@@ -1,4 +1,4 @@
-import { Component, Input, signal } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-menu-link',
@@ -8,10 +8,8 @@ import { Component, Input, signal } from '@angular/core';
 })
 export class MenuLink {
 
-  @Input()
-  text: string = "";
-
-  @Input()
-  link: string = "#";
+  text = input<string>("#");
+  link = input<string>("#");
+  active = input<boolean>(false);
 
 }

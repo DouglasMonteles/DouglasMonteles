@@ -18,18 +18,14 @@
           />
 
           <nav class="hidden flex-col gap-2 my-12 lg:flex lg:text-xl">
-            <app-menu-link 
-              text="Sobre"
-              link="#"
-            />
-            <app-menu-link 
-              text="Experiência"
-              link="#"
-            />
-            <app-menu-link 
-              text="Projetos"
-              link="#"
-            />
+            @for (item of menuList(); track $index) {
+              <app-menu-link 
+                [text]="item.name"
+                [link]="item.link"
+                [active]="item.active"
+                (click)="updateMenuLinkActive($index)"
+              />
+            }
           </nav>
         </div>
 
