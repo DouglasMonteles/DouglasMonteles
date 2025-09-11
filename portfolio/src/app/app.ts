@@ -25,19 +25,19 @@ export class App {
     {
       id: "about",
       name: "Sobre",
-      link: "#",
+      link: "/about",
       active: true,
     },
     {
       id: "experience",
       name: "Experiência",
-      link: "#",
+      link: "/experience",
       active: false,
     },
     {
       id: "projects",
       name: "Projetos",
-      link: "#",
+      link: "/projects",
       active: false,
     },
   ]);
