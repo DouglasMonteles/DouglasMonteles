@@ -5,6 +5,7 @@ import { Profile } from "./components/profile/profile";
 import { MenuLink } from "./components/menu-link/menu-link";
 
 import MenuItem from './models/MenuItem';
+import { SideNavComponent } from "./components/side-nav/side-nav.component";
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,8 @@ import MenuItem from './models/MenuItem';
     RouterOutlet,
     Footer,
     Profile,
-    MenuLink
+    MenuLink,
+    SideNavComponent
 ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
@@ -21,7 +23,7 @@ export class App {
 
   protected readonly title = signal('portfolio');
 
-  readonly menuList = signal<Array<MenuItem>>([
+  public readonly menuList = signal<Array<MenuItem>>([
     {
       id: "about",
       name: "Sobre",
