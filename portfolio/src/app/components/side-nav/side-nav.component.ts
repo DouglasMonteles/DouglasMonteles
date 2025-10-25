@@ -8,7 +8,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { RouterLink } from '@angular/router';
+import { EventType, Router, RouterLink } from '@angular/router';
 import MenuItem from '../../models/MenuItem';
 
 @Component({
@@ -56,6 +56,20 @@ export class SideNavComponent {
   ]);
 
   isMenuLinkActive = signal<boolean>(false);
+
+  constructor(private _route: Router) {
+    this._route.events.subscribe({
+      next: (value) => {
+        if (value.type == EventType.ResolveEnd) {
+          const activeUrl = value.url;
+          const indexActiveUrl = this.menuList().findIndex(it => it.link == activeUrl);
+
+          this.updateMenuLinkActive(indexActiveUrl);
+          this.toggleSideMenu();
+        }
+      }
+    });
+  }
 
   updateMenuLinkActive(linkIndex: number): void {
     this.menuList.update(items => (items.map((item, index) => {
