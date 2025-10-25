@@ -1,4 +1,4 @@
-import { Component, inject, signal, ViewChild } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, signal, ViewChild } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { AsyncPipe } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -23,7 +23,10 @@ import MenuItem from '../../models/MenuItem';
     MatIconModule,
     AsyncPipe,
     RouterLink,
-]
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ]
 })
 export class SideNavComponent {
 
