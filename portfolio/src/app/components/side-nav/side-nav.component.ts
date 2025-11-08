@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { EventType, Router, RouterLink } from '@angular/router';
 import MenuItem from '../../models/MenuItem';
+import { SlideToggle } from "../forms/slide-toggle/slide-toggle";
 
 @Component({
   selector: 'app-side-nav',
@@ -23,7 +24,8 @@ import MenuItem from '../../models/MenuItem';
     MatIconModule,
     AsyncPipe,
     RouterLink,
-  ],
+    SlideToggle
+],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ]
@@ -76,7 +78,8 @@ export class SideNavComponent {
       item.active = linkIndex === index ? true : false;
       return item;
     })));
-    this.drawer.toggle();
+    
+    this.drawer?.toggle();
   }
 
   @ViewChild("drawer") drawer!: MatSidenav;

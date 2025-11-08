@@ -5,6 +5,17 @@
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
 
+@include mat.core();
+
+// Switch for dark theme
+.dark-theme {
+  color-scheme: dark;
+  * {
+    /* Tailwind css */
+    --tw-shadow-color: #2a2a2a;
+  }
+}
+
 html {
   @include mat.theme((
     color: (
@@ -32,6 +43,15 @@ body {
   // Reset the user agent margin.
   margin: 0;
 }
+
+span {
+  color: var(--mat-sys-on-surface);
+}
+
+.nav-indicator {
+  background-color: var(--mat-sys-on-surface) !important;
+}
+
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }

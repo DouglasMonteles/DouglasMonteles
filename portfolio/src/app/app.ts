@@ -47,7 +47,6 @@ export class App implements OnInit {
   isMenuLinkActive = signal<boolean>(false);
 
   constructor(private _route: Router) {
-
   }
 
   ngOnInit(): void {
