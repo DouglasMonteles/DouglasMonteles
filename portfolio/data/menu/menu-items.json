@@ -1,0 +1,20 @@
+[
+  {
+    "id": "about",
+    "name": "Sobre",
+    "link": "/about",
+    "active": true
+  },
+  {
+    "id": "experience",
+    "name": "Experiência",
+    "link": "/experience",
+    "active": false
+  },
+  {
+    "id": "projects",
+    "name": "Projetos",
+    "link": "/projects",
+    "active": false
+  }
+]

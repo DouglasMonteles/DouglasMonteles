@@ -15,7 +15,7 @@
             mat-list-item 
             [routerLink]="item.link"
             [activated]="item.active"
-            (click)="updateMenuLinkActive($index)"
+            (click)="updateMenuLinkActive($index); toggleSideMenu()"
           >
             {{item.name}}
           </a>
