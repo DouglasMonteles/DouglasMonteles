@@ -1,62 +1,22 @@
 <article>
   <div>
     <ol class="">
-      <li class="mb-12">
-        <app-xp-card 
-          period="1/2022 - 1/2023"
-          responsibility="Estagiário"
-          enterprise="Empresa XYZ"
-          enterpriseLink="#"
-          description="Build and maintain critical components used to construct Klaviyo’s
-          frontend, across the whole product. Work closely with cross-functional teams, including developers,
-          designers, and product managers, to implement and advocate for best practices in web accessibility."
-          enterpriseProjectLink="#"
-          enterpriseProjectLinkDescription="Android App"
-          [tags]="['Javascript', 'Java', 'CI/CD']"
-        />
-      </li>
-      <li class="mb-12">
-        <app-xp-card 
-          period="1/2022 - 1/2023"
-          responsibility="Estagiário"
-          enterprise="Empresa XYZ"
-          enterpriseLink="#"
-          description="Build and maintain critical components used to construct Klaviyo’s
-          frontend, across the whole product. Work closely with cross-functional teams, including developers,
-          designers, and product managers, to implement and advocate for best practices in web accessibility."
-          enterpriseProjectLink="#"
-          enterpriseProjectLinkDescription="Android App"
-          [tags]="['Javascript', 'Java', 'CI/CD']"
-        />
-      </li>
-      <li class="mb-12">
-        <app-xp-card 
-          period="1/2022 - 1/2023"
-          responsibility="Estagiário"
-          enterprise="Empresa XYZ"
-          enterpriseLink="#"
-          description="Build and maintain critical components used to construct Klaviyo’s
-          frontend, across the whole product. Work closely with cross-functional teams, including developers,
-          designers, and product managers, to implement and advocate for best practices in web accessibility."
-          enterpriseProjectLink="#"
-          enterpriseProjectLinkDescription="Android App"
-          [tags]="['Javascript', 'Java', 'CI/CD']"
-        />
-      </li>
-      <li class="mb-12">
-        <app-xp-card 
-          period="1/2022 - 1/2023"
-          responsibility="Estagiário"
-          enterprise="Empresa XYZ"
-          enterpriseLink="#"
-          description="Build and maintain critical components used to construct Klaviyo’s
-          frontend, across the whole product. Work closely with cross-functional teams, including developers,
-          designers, and product managers, to implement and advocate for best practices in web accessibility."
-          enterpriseProjectLink="#"
-          enterpriseProjectLinkDescription="Android App"
-          [tags]="['Javascript', 'Java', 'CI/CD']"
-        />
-      </li>
+      @if (($experience() | async); as experience) {
+        @for (xp of experience; track $index) {
+          <li class="mb-12">
+            <app-xp-card 
+              [period]=`${xp.start}&nbsp;-&nbsp;${xp.end}`
+              [responsibility]="xp.job.position"
+              [description]="xp.job.description"
+              [enterprise]="xp.company.name"
+              [enterpriseLink]="xp.company.link"
+              [enterpriseProjectLink]="xp.company.productLink"
+              [enterpriseProjectLinkDescription]="xp.company.productLinkDescription"
+              [tags]="xp.tags"
+            />
+          </li>
+        } 
+      }
     </ol>
   </div>
 </article>
