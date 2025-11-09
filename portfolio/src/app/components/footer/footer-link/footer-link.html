@@ -3,8 +3,8 @@
   [href]="link()" 
   target="_blank" 
   rel="noreferrer noopener" 
-  aria-label="GitHub (opens in a new tab)" 
-  title="GitHub"
+  [attr.aria-label]="text() + ' abre em uma nova janela'"
+  [title]="text()"
 >
   <span class="sr-only">
     {{text()}}

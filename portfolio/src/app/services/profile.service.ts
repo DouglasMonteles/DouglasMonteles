@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ProfileAbout } from '../models/ProfileAbout';
 import { environment } from '../../environments/environment.development';
 import { ProfessionalExperience } from '../models/ProfessionalExperience';
+import { SocialMedia } from '../models/SocialMedia';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,10 @@ export class ProfileService {
 
   public experience(): Observable<ProfessionalExperience[]> {
     return this._http.get<ProfessionalExperience[]>(`${environment.baseApiUrl}/profile/professional-experience.json`);
+  }
+
+  public socialMedia(): Observable<SocialMedia[]> {
+    return this._http.get<SocialMedia[]>(`${environment.baseApiUrl}/profile/social-media.json`);
   }
 
 }
