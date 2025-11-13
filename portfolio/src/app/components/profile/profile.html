@@ -1,20 +1,22 @@
-<article class="flex flex-col gap-8">
-  <div class="flex flex-row items-center gap-2 h-full">
-    <img 
-      [src]="pictureLink()" 
-      alt="Foto de perfil" 
-      class="w-12 h-12 rounded-full lg:w-18 lg:h-18">
-    <div class="flex flex-col justify-between">
-      <h1 class="text-xl lg:text-2xl">
-        {{name()}}
-      </h1>
-      <h2 class="font-light lg:text-lg">
-        {{profession()}}
-      </h2>
+@if (($profile() | async); as profile) {
+  <article class="flex flex-col gap-8">
+    <div class="flex flex-row items-center gap-2 h-full">
+      <img 
+        [src]="profile.avatar_url" 
+        alt="Foto de perfil" 
+        class="w-12 h-12 rounded-full lg:w-18 lg:h-18">
+      <div class="flex flex-col justify-between">
+        <h1 class="text-xl lg:text-2xl">
+          {{profile.name}}
+        </h1>
+        <h2 class="font-light lg:text-lg">
+          {{profile.company}}
+        </h2>
+      </div>
     </div>
-  </div>
 
-  <p class="text-justify font-normal lg:text-lg">
-    {{resume()}}
-  </p>
-</article>
+    <p class="text-justify font-normal lg:text-lg">
+      {{profile.bio}}
+    </p>
+  </article>
+}

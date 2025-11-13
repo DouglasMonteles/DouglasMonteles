@@ -4,7 +4,7 @@ import { ProjCard } from './proj-card/proj-card';
 @Component({
   selector: 'app-projects',
   imports: [
-    ProjCard
+    ProjCard,
   ],
   templateUrl: './projects.html',
   styleUrl: './projects.scss'

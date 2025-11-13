@@ -1,5 +1,5 @@
 import { Component, OnInit, signal } from '@angular/core';
-import { ActivatedRoute, EventType, Router, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { EventType, Router, RouterOutlet } from '@angular/router';
 import { Footer } from './components/footer/footer';
 import { Profile } from "./components/profile/profile";
 import { MenuLink } from "./components/menu-link/menu-link";
@@ -15,7 +15,7 @@ import { MenuService } from './services/menu.service';
     Footer,
     Profile,
     MenuLink,
-    SideNavComponent
+    SideNavComponent,
 ],
   templateUrl: './app.html',
   styleUrl: './app.scss'

@@ -5,6 +5,7 @@ import { ProfileAbout } from '../models/ProfileAbout';
 import { environment } from '../../environments/environment.development';
 import { ProfessionalExperience } from '../models/ProfessionalExperience';
 import { SocialMedia } from '../models/SocialMedia';
+import { GithubUserProfile } from '../models/GithubUserProfile';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,10 @@ export class ProfileService {
 
   public socialMedia(): Observable<SocialMedia[]> {
     return this._http.get<SocialMedia[]>(`${environment.baseApiUrl}/profile/social-media.json`);
+  }
+
+  public githubProfile(username: string): Observable<GithubUserProfile> {
+    return this._http.get<GithubUserProfile>(`${environment.githubApiUrl}/users/${username}`);
   }
 
 }
