@@ -6,6 +6,7 @@ import { environment } from '../../environments/environment.development';
 import { ProfessionalExperience } from '../models/ProfessionalExperience';
 import { SocialMedia } from '../models/SocialMedia';
 import { GithubUserProfile } from '../models/GithubUserProfile';
+import GithubUserRepository from '../models/GithubUserRepository';
 
 @Injectable({
   providedIn: 'root'
@@ -31,5 +32,13 @@ export class ProfileService {
   public githubProfile(username: string): Observable<GithubUserProfile> {
     return this._http.get<GithubUserProfile>(`${environment.githubApiUrl}/users/${username}`);
   }
+
+  public githubRepositories(username: string, page: number): Observable<Array<GithubUserRepository>> {
+    return this._http.get<Array<GithubUserRepository>>(`${environment.githubApiUrl}/users/${username}/repos`, {
+      params: {
+        page,
+      }
+    });
+  } 
 
 }

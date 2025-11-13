@@ -1,118 +1,19 @@
 <article>
   <div class="">
     <ol class="">
-      <li class="mb-12">
-        <app-proj-card
-          [projectName]="'Spotify'"
-          projectDescription="Web app for visualizing personalized Spotify data. View your top artists, 
-          top tracks, recently played tracks, and detailed audio information about each track. 
-          Create and save new playlists of recommended tracks based on your existing playlists 
-          and more."
-          [projectLink]="'#'"
-          [projectRepositoryLink]="'#'"
-          [projectStars]="0"
-          [projectImage]="'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png'"
-          [tags]="['Javascript', 'Java', 'CI/CD']"
-        />
-      </li>
-      <li class="mb-12">
-        <app-proj-card
-          [projectName]="'Spotify'"
-          projectDescription="Web app for visualizing personalized Spotify data. View your top artists, 
-          top tracks, recently played tracks, and detailed audio information about each track. 
-          Create and save new playlists of recommended tracks based on your existing playlists 
-          and more."
-          [projectLink]="'#'"
-          [projectRepositoryLink]="'#'"
-          [projectStars]="0"
-          [projectImage]="'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png'"
-          [tags]="['Javascript', 'Java', 'CI/CD']"
-        />
-      </li>
-      <li class="mb-12">
-        <app-proj-card
-          [projectName]="'Spotify'"
-          projectDescription="Web app for visualizing personalized Spotify data. View your top artists, 
-          top tracks, recently played tracks, and detailed audio information about each track. 
-          Create and save new playlists of recommended tracks based on your existing playlists 
-          and more."
-          [projectLink]="'#'"
-          [projectRepositoryLink]="'#'"
-          [projectStars]="0"
-          [projectImage]="'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png'"
-          [tags]="['Javascript', 'Java', 'CI/CD']"
-        />
-      </li>
-      <li class="mb-12">
-        <app-proj-card
-          [projectName]="'Spotify'"
-          projectDescription="Web app for visualizing personalized Spotify data. View your top artists, 
-          top tracks, recently played tracks, and detailed audio information about each track. 
-          Create and save new playlists of recommended tracks based on your existing playlists 
-          and more."
-          [projectLink]="'#'"
-          [projectRepositoryLink]="'#'"
-          [projectStars]="0"
-          [projectImage]="'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png'"
-          [tags]="['Javascript', 'Java', 'CI/CD']"
-        />
-      </li>
-      <li class="mb-12">
-        <app-proj-card
-          [projectName]="'Spotify'"
-          projectDescription="Web app for visualizing personalized Spotify data. View your top artists, 
-          top tracks, recently played tracks, and detailed audio information about each track. 
-          Create and save new playlists of recommended tracks based on your existing playlists 
-          and more."
-          [projectLink]="'#'"
-          [projectRepositoryLink]="'#'"
-          [projectStars]="0"
-          [projectImage]="'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png'"
-          [tags]="['Javascript', 'Java', 'CI/CD']"
-        />
-      </li>
-      <li class="mb-12">
-        <app-proj-card
-          [projectName]="'Spotify'"
-          projectDescription="Web app for visualizing personalized Spotify data. View your top artists, 
-          top tracks, recently played tracks, and detailed audio information about each track. 
-          Create and save new playlists of recommended tracks based on your existing playlists 
-          and more."
-          [projectLink]="'#'"
-          [projectRepositoryLink]="'#'"
-          [projectStars]="0"
-          [projectImage]="'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png'"
-          [tags]="['Javascript', 'Java', 'CI/CD']"
-        />
-      </li>
-      <li class="mb-12">
-        <app-proj-card
-          [projectName]="'Spotify'"
-          projectDescription="Web app for visualizing personalized Spotify data. View your top artists, 
-          top tracks, recently played tracks, and detailed audio information about each track. 
-          Create and save new playlists of recommended tracks based on your existing playlists 
-          and more."
-          [projectLink]="'#'"
-          [projectRepositoryLink]="'#'"
-          [projectStars]="0"
-          [projectImage]="'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png'"
-          [tags]="['Javascript', 'Java', 'CI/CD']"
-        />
-      </li>
-      <li class="mb-12">
-        <app-proj-card
-          [projectName]="'Spotify'"
-          projectDescription="Web app for visualizing personalized Spotify data. View your top artists, 
-          top tracks, recently played tracks, and detailed audio information about each track. 
-          Create and save new playlists of recommended tracks based on your existing playlists 
-          and more."
-          [projectLink]="'#'"
-          [projectRepositoryLink]="'#'"
-          [projectStars]="0"
-          [projectImage]="'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png'"
-          [tags]="['Javascript', 'Java', 'CI/CD']"
-        />
-      </li>
+      @for (proj of ($projects() | async); track $index) {
+        <li class="mb-12">
+          <app-proj-card
+            [projectName]="proj.name"
+            [projectDescription]="proj.description || 'Sem descrição :('"
+            [projectLink]="proj.homepage"
+            [projectRepositoryLink]="proj.html_url"
+            [projectStars]="proj.stargazers_count"
+            [projectImage]="'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png'"
+            [tags]="proj.topics"
+          />
+        </li>
+      }
     </ol>
   </div>
 </article>
