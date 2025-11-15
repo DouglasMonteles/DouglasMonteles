@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { EMPTY, Observable } from 'rxjs';
+import { EMPTY, Observable, shareReplay } from 'rxjs';
 import { ProfileAbout } from '../models/ProfileAbout';
 import { environment } from '../../environments/environment.development';
 import { ProfessionalExperience } from '../models/ProfessionalExperience';
@@ -16,6 +16,8 @@ export class ProfileService {
 
   private readonly SORT_BY: string = "update";
   private readonly ITEMS_PER_PAGE: number = 10;
+
+  private languageCache = new Map<string, Observable<GithubLanguageRepository>>();
   
   constructor(
     private _http: HttpClient,
@@ -48,11 +50,17 @@ export class ProfileService {
   } 
 
   public githubRepositoryLanguage(repositoryName: string): Observable<GithubLanguageRepository> {
-    if (repositoryName == "") {
-      return EMPTY;
+    const cacheKey = `${environment.githubUsername}/${repositoryName}`;
+
+    if (!this.languageCache.has(cacheKey)) {
+      const request$ = this._http
+        .get<GithubLanguageRepository>(`${environment.githubApiUrl}/repos/${environment.githubUsername}/${repositoryName}/languages`)
+        .pipe(shareReplay(1));
+
+      this.languageCache.set(cacheKey, request$);
     }
-    
-    return this._http.get<GithubLanguageRepository>(`${environment.githubApiUrl}/repos/${environment.githubUsername}/${repositoryName}/languages`);
+
+    return this.languageCache.get(cacheKey) ?? EMPTY;
   }
 
 }

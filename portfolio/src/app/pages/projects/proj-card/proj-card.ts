@@ -37,8 +37,12 @@ export class ProjCard implements OnInit {
     this.$languages.update(() => this._profileService
       .githubRepositoryLanguage(this.projectName())
       .pipe(
-        map(obj => Object.keys(obj))
+        map(this._convertObjectKeysInStringList)
       ));
+  }
+
+  private _convertObjectKeysInStringList(obj: Object): string[] {
+    return Object.keys(obj);
   }
 
 }
