@@ -5,7 +5,7 @@ export default interface GithubUserRepository {
   description: string | null;
   fork: boolean;
   html_url: string;
-  languages_url: Map<string, number>;
+  languages_url: string;
   topics: Array<string>;
   language: string;
   homepage: string;
