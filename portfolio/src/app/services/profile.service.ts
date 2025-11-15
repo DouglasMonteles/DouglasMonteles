@@ -33,10 +33,11 @@ export class ProfileService {
     return this._http.get<GithubUserProfile>(`${environment.githubApiUrl}/users/${username}`);
   }
 
-  public githubRepositories(username: string, page: number): Observable<Array<GithubUserRepository>> {
+  public githubRepositories(username: string, page: number, sort: string = "update"): Observable<Array<GithubUserRepository>> {
     return this._http.get<Array<GithubUserRepository>>(`${environment.githubApiUrl}/users/${username}/repos`, {
       params: {
         page,
+        sort,
       }
     });
   } 

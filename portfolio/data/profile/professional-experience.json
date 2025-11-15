@@ -1,116 +1,73 @@
 [
   {
-    "start": "1/2022",
-    "end": "1/2023",
+    "start": "2/2018",
+    "end": "1/2019",
     "company": {
-      "name": "Empresa XYZ",
+      "name": "Defensoria Pública do Distrito Federal",
       "link": "#",
       "productLink": "#",
-      "productLinkDescription": "App Android"
+      "productLinkDescription": "Ver contrato em PDF"
     },
     "job": {
-      "position": "Estagiário",
-      "description": "Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more."
+      "position": "Estagiário de TI",
+      "description": "Responsável pelo gerenciamento do banco de dados utilizado para o cadastro de agendamentos e de atendimentos do dia. Durante o expediente, os dados eram adicionados/atualizados constantemente conforme os atendimentos, então era necessário monitorar o banco de dados e realizar atividades que visam melhorar a performance durante esse período, tais como: pesquisa paginada, adição de filtros por dia e horário e backup dos registros."
     },
     "tags": [
-      "Javascript", 
-      "Java", 
-      "CI/CD"
+      "Microsoft Access", 
+      "Backup", 
+      "Paginação",
+      "Filtros personalizados",
+      "Presencial"
     ]
   },
-  {
-    "start": "1/2022",
-    "end": "1/2023",
+
+   {
+    "start": "2/2022",
+    "end": "1/2024",
     "company": {
-      "name": "Empresa XYZ",
+      "name": "Supremo Tribunal Federal",
       "link": "#",
       "productLink": "#",
-      "productLinkDescription": "App Android"
+      "productLinkDescription": "Ver contrato em PDF"
     },
     "job": {
-      "position": "Estagiário",
-      "description": "Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more."
+      "position": "Desenvolvedor web",
+      "description": "Desenvolvimento de micro-frontend para serem adicionados ao sistema gerenciamento de votação do STF, o qual exibe os votos de cada ministro em uma dada votação. Também adicionei novos endpoints para buscar, inserir, atualizar ou excluir informações, dependendo da tela acessada."
     },
     "tags": [
-      "Javascript", 
-      "Java", 
-      "CI/CD"
+      "STF",
+      "Angular",
+      "Java",
+      "Docker",
+      "Rest API",
+      "Micro Frontend",
+      "Microsoft Teams",
+      "Jira",
+      "Home office"
     ]
   },
+
   {
-    "start": "1/2022",
-    "end": "1/2023",
+    "start": "1/2024",
+    "end": "1/2025",
     "company": {
-      "name": "Empresa XYZ",
-      "link": "#",
-      "productLink": "#",
-      "productLinkDescription": "App Android"
+      "name": "Projeto FAPDF (MEPA Energia)",
+      "link": "https://lappis-unb.gitlab.io/projetos-energia/mec-energia/documentacao/sobre/#equipe-de-desenvolvimento-de-software",
+      "productLink": "https://mepaenergia.org",
+      "productLinkDescription": "Sobre o Mepa Energia"
     },
     "job": {
-      "position": "Estagiário",
-      "description": "Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more."
+      "position": "Desenvolvedor web",
+      "description": "Pesquisa desenvolvida na faculdade UnB Campus do Gama, com o objetivo de criar uma plataforma avançada e de software livre, desenvolvida por pesquisadores da Universidade de Brasília, reconhecida pelo TCU e financiada pelo Governo Federal, para otimizar contratos de energia em grandes instituições."
     },
     "tags": [
-      "Javascript", 
-      "Java", 
-      "CI/CD"
-    ]
-  },
-  {
-    "start": "1/2022",
-    "end": "1/2023",
-    "company": {
-      "name": "Empresa XYZ",
-      "link": "#",
-      "productLink": "#",
-      "productLinkDescription": "App Android"
-    },
-    "job": {
-      "position": "Estagiário",
-      "description": "Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more."
-    },
-    "tags": [
-      "Javascript", 
-      "Java", 
-      "CI/CD"
-    ]
-  },
-  {
-    "start": "1/2022",
-    "end": "1/2023",
-    "company": {
-      "name": "Empresa XYZ",
-      "link": "#",
-      "productLink": "#",
-      "productLinkDescription": "App Android"
-    },
-    "job": {
-      "position": "Estagiário",
-      "description": "Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more."
-    },
-    "tags": [
-      "Javascript", 
-      "Java", 
-      "CI/CD"
-    ]
-  },
-  {
-    "start": "1/2022",
-    "end": "1/2023",
-    "company": {
-      "name": "Empresa XYZ",
-      "link": "#",
-      "productLink": "#",
-      "productLinkDescription": "App Android"
-    },
-    "job": {
-      "position": "Estagiário",
-      "description": "Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more."
-    },
-    "tags": [
-      "Javascript", 
-      "Java", 
-      "CI/CD"
+      "React",
+      "NextJS",
+      "Python",
+      "Django",
+      "Gitlab",
+      "UnB",
+      "Bolsista"
     ]
   }
 ]
